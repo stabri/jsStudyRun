@@ -5,7 +5,7 @@
 - String values in JavaScript may be written with single or double quotes, as long as you start and end with the same type of quote. Unlike some other programming languages, single and double quotes work the same in JavaScript.
 - In JavaScript, String values are immutable, which means that they cannot be altered once created.  Note that this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed.
 - Switch statement - case values are tested with strict equality (===)
-- Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. [code example](Objects)
+- Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. [code example](#Objects)
 -
 
 ## Operators
@@ -21,9 +21,10 @@
 \b	backspace
 \f	form feed
 ```
+
 - length of a String value by writing .length
 - ==  The equality operator compares two values and returns true if they're equivalent or false if they are not.
-- === is the counterpart to the equality operator (==). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+- === is the counterpart to the equality operator (==). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion. [code examples](#comparison)
 -
 
 
@@ -47,6 +48,7 @@
   console.log(param1, param2);
 }
 
+#### Comparison
 ```javascript
 1 == 1 // true
 1 == 2 // false
@@ -63,7 +65,6 @@
 3 !== '3' // true
 4 !== 3 // true
 ```
-
 #### Objects
 ```javascript
 var anotherObject = {
