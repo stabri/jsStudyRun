@@ -5,9 +5,16 @@
 - String values in JavaScript may be written with single or double quotes, as long as you start and end with the same type of quote. Unlike some other programming languages, single and double quotes work the same in JavaScript.
 - In JavaScript, String values are immutable, which means that they cannot be altered once created.  Note that this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed.
 - Switch statement - case values are tested with strict equality (===)
-- Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. [code example](#Objects)
--
 
+## Object
+
+- Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. [code example](#Objects);
+- There are two ways to access the properties of an object: dot notation (.property) and bracket notation (["property"]), similar to an array. You can add new properties to existing JavaScript objects the same way you would modify them.
+-We can also delete properties from objects like this:
+```javascript
+delete ourDog.bark;
+```
+- .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
 ## Operators
 - % The remainder operator is sometimes incorrectly referred to as the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
 - escape char in String :
@@ -70,6 +77,12 @@
 var anotherObject = {
   make: "Ford",
   5: "five",
-  "model": "focus"
-};
+  "artist": "Daft Punk",
+  "release_year": 1997,
+  "formats": [
+    "CD",
+    "Cassette",
+    "LP"
+  ]
+}
 ```
