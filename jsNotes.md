@@ -1,9 +1,11 @@
-## Basics variables
+## Basics
 - JavaScript provides seven different data types which are undefined, null, boolean, string, symbol, number, and object.
 - When JavaScript variables are declared, they have an initial value of undefined, mathematical operation on them => NaN, concatenation => undefined
 - Number is a data type in JavaScript which represents numeric data.
 - String values in JavaScript may be written with single or double quotes, as long as you start and end with the same type of quote. Unlike some other programming languages, single and double quotes work the same in JavaScript.
 - In JavaScript, String values are immutable, which means that they cannot be altered once created.  Note that this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed.
+- Switch statement - case values are tested with strict equality (===)
+- Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. [code example](Objects)
 -
 
 ## Operators
@@ -45,7 +47,7 @@
   console.log(param1, param2);
 }
 
-```sh
+```javascript
 1 == 1 // true
 1 == 2 // false
 1 == '1' // true
@@ -60,4 +62,13 @@
 3 !== 3 // false
 3 !== '3' // true
 4 !== 3 // true
+```
+
+#### Objects
+```javascript
+var anotherObject = {
+  make: "Ford",
+  5: "five",
+  "model": "focus"
+};
 ```
