@@ -106,7 +106,11 @@ This behavior will cause problems if you were to create a function and store it 
 - __const__ has all the awesome features that let has, with the added bonus that variables declared using const are read-only. They are a constant value, which means that once a variable is assigned with const, it cannot be reassigned. [example](#const)
 - However, it is important to understand that objects (including arrays and functions) assigned to a variable using const are still __mutable__. Using the const declaration only prevents reassignment of the variable identifier.
 - __Object.freeze__ to prevent data mutation. Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error. [example](#frozen)
-
+- __arrow function syntax:__ In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. [example](#inline) You can pass more than one argument into arrow functions as well.
+- Arrow functions work really well with higher order functions, such as map(), filter(), and reduce(), that take other functions as arguments for processing collections of data. [example](#higherOrder)
+- ES6 introduces __default parameters__ for functions [example](#defaultParameter)
+- ES6 introduces the __rest operator__ for function parameters. With the rest operator, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.[example](#restOperator)
+- ES6 introduces the __spread operator__, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected [example](#spreadOperator) However, the spread operator only works in-place, like in an argument to a function or in an array literal.
 ## Code snippets
 ###### overwrite
 ```javascript
@@ -180,4 +184,37 @@ obj.review = "bad"; //will be ignored. Mutation not allowed
 obj.newProp = "Test"; // will be ignored. Mutation not allowed
 console.log(obj);
 // { name: "FreeCodeCamp", review:"Awesome"}
+```
+###### inline
+```javascript
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+```
+###### higherOrder
+```javascript
+FBPosts.filter((post) => post.thumbnail !== null && post.shares > 100 && post.likes > 500)
+```
+###### defaultParameter
+```javascript
+function greeting(name = "Anonymous") {
+  return "Hello " + name;
+}
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous
+```
+###### restOperator
+```javascript
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
+```
+###### spreadOperator
+```javascript
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+//...arr returns an unpacked array. In other words, it spreads the array.
 ```
