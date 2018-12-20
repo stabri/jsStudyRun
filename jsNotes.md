@@ -111,6 +111,9 @@ This behavior will cause problems if you were to create a function and store it 
 - ES6 introduces __default parameters__ for functions [example](#defaultParameter)
 - ES6 introduces the __rest operator__ for function parameters. With the rest operator, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.[example](#restOperator)
 - ES6 introduces the __spread operator__, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected [example](#spreadOperator) However, the spread operator only works in-place, like in an argument to a function or in an array literal.
+- __Destructuring assignment__ is special syntax for neatly assigning values taken directly from an object to variables.[example](#destructing)
+- __template literal__ - This is a special type of string that makes creating complex strings easier. __${variable}__ syntax is a placeholder, you won't have to use concatenation with the + operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with ${ and }. Similarly, you can include other expressions in your string literal, for example ${a + b}
+- ES6 provides a new syntax to help create objects, using the keyword class. This is to be noted, that the class syntax is just a syntax, and not a full-fledged class based implementation of object oriented paradigm, unlike in languages like Java, or Python, or Ruby etc. [example](#class)
 ## Code snippets
 ###### overwrite
 ```javascript
@@ -217,4 +220,29 @@ console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argum
 const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 //...arr returns an unpacked array. In other words, it spreads the array.
+```
+###### destructing
+```javascript
+const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
+
+const a = {
+  start: { x: 5, y: 6},
+  end: { x: 6, y: -9 }
+};
+const { start : { x: startX, y: startY }} = a;
+```
+###### class
+```javascript
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+// The class syntax simply replaces the constructor function creation:
+
+class SpaceShuttle {
+  constructor(targetPlanet){
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
 ```
